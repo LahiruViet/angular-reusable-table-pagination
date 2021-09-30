@@ -1,0 +1,17 @@
+
+<div class="container .table-responsive">
+    <table class="table .table-bordered table-hover">
+        <thead>
+            <tr>
+                <th *ngFor="let key of columnData">{{key.header}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of gridData">
+                <td *ngFor="let key of columnData">
+                    <span>{{record[key.feild]}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

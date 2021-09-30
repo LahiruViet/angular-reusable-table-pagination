@@ -1,0 +1,30 @@
+
+ <!-- pager -->
+ <nav aria-label="Page navigation">
+
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination justify-content-end">
+
+        <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+            <a (click)="getBooks(1)" class="page-link">First</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+            <a (click)="getBooks(pager.currentPage - 1)" class="page-link">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" class="page-item" [ngClass]="{active: pager.currentPage === page && isReady}" >
+            <a (click)="getBooks(page)" class="page-link">{{page}}</a>
+        </li>
+        <li *ngIf="(totalPages - pager.startPage) > 5 " class="page-item">
+            <a (click)="getBooks(pager.startPage + 5)" class="page-link">...</a>
+        </li>
+        <li *ngIf="(totalPages - pager.startPage) > 5" class="page-item">
+            <a (click)="getBooks(totalPages)" class="page-link">{{totalPages}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === totalPages}" class="page-item">
+            <a (click)="getBooks(pager.currentPage + 1)" class="page-link">Next</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === totalPages}" class="page-item">
+            <a (click)="getBooks(totalPages)" class="page-link">Last</a>
+        </li>
+
+    </ul>
+</nav>

@@ -1,0 +1,33 @@
+
+
+
+div.wrapper {
+    position: absolute;
+    background-color: rgba(228, 228, 228, 0.986);
+    width: 100%;
+    height: 100%;
+}
+
+tbody tr td {
+    border-style: none;
+}
+
+tbody tr {
+    background-color: rgba(228, 228, 228, 0.904);
+    border-style: none;
+    border-bottom: 0.01em solid gray;
+}
+
+thead tr {
+    background-color: white;
+}
+
+table.table-outer {
+    border: 1em solid white;
+}
+
+@media (max-height: 23em) {
+    div.wrapper {
+        overflow-y: scroll;
+    }
+}

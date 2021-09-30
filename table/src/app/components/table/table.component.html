@@ -1,0 +1,11 @@
+
+<div class="wrapper">
+    <div class="container">
+        <h1>Books</h1>
+
+        <app-reusable-table [columnData]="columnData" [gridData]="gridData"></app-reusable-table>
+
+        <app-reusable-pagination [pager]="pager" [totalPages]="totalPages" [isReady]="isReady" 
+            (pageEvent)="getBooks($event)"></app-reusable-pagination>
+    </div>
+</div>
